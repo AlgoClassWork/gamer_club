@@ -1,7 +1,13 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Game
 
 class GameListView(ListView):
     model = Game
     template_name = 'game_list.html'
     context_object_name = 'games'
+    paginate_by = 2
+
+class GameDetailView(DetailView):
+    model = Game
+    template_name = 'game_detail.html'
+    context_object_name = 'game'
