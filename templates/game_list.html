@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<h2>Список игр</h2>
+
+<ul class="game-list">
+    {% for game in games %}
+        <li class="game-item">
+            <a class="game-title" href="">
+                {{ game.title }}
+            </a>
+            <div class="game-meta">
+                Жанр: {{ game.genre }} • Год: {{ game.release_year }}
+            </div>
+        </li>
+    {% empty %}
+        <li class="game-item">Игр пока нет.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
