@@ -17,4 +17,4 @@ class Game(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse('game_detail', kwargs={'id': self.id})
+        return reverse('game_detail', kwargs={'pk': self.pk})
