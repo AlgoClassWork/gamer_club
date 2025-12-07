@@ -4,6 +4,7 @@
 
 {% block content %}
 <h2>Список игр</h2>
+<a href="{% url 'game_create' %}">Добавить</a>
 
 <ul class="game-list">
     {% for game in games %}
